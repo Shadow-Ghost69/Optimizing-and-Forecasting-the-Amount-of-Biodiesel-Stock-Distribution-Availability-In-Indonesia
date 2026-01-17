@@ -1,0 +1,418 @@
+{UTF-8}
+Domestic Biodiesel Demand for Customers Average Rate=
+	0.93
+	~	Dmnl
+	~		|
+
+Biodiesel Export to Global Average Rate=
+	0.33
+	~	Dmnl
+	~		|
+
+Increasing Domestic Demand=
+	(Industrial Demand Average Rate+Retail Demand Average Rate)*Domestic Biodiesel Demand
+	~	Kilo Litre/Year
+	~		|
+
+Biodiesel Distribution to Customers=
+	Stock Distribution Availability*(Economic Crises Average Rate+Low Product Quality Average Rate\
+		+Low Resource Availability Average Rate+Unattainable Prices for Customers Average Rate\
+		)
+	~	Kilo Litre/Year
+	~		|
+
+Biodiesel Distribution to Stock=
+	Stock Distribution Availability*(Availability of Facilities Average Rate+Infrastructure Development Average Rate\
+		)
+	~	Kilo Litre/Year
+	~		|
+
+Stock Distribution Availability= INTEG (
+	Biodiesel Distribution to Stock-Biodiesel Distribution to Customers+Domestic Biodiesel Production to Stock\
+		-Domestic Biodiesel Demand for Customers-Biodiesel Export to Global,
+		1.25962e+06)
+	~	Kilo Litre/Year
+	~		|
+
+Domestic Biodiesel Production to Stock=
+	Domestic Biodiesel Production*Domestic Biodiesel Production to Stock Average Rate
+	~	Kilo Litre/Year
+	~		|
+
+Domestic Biodiesel Production to Stock Average Rate=
+	0.95
+	~	Dmnl
+	~		|
+
+Domestic Biodiesel Demand for Customers=
+	Domestic Biodiesel Demand*Domestic Biodiesel Demand for Customers Average Rate
+	~	Kilo Litre/Year
+	~		|
+
+Affordable Industrial Price Average Rate=
+	0.05
+	~	Dmnl
+	~		|
+
+Affordable Retail Price Average Rate=
+	0.15
+	~	Dmnl
+	~		|
+
+Availability of Facilities Average Rate=
+	0.45
+	~	Dmnl
+	~		|
+
+Biodiesel Export to Global= INTEG (
+	Biodiesel Export to Global*Biodiesel Export to Global Average Rate,
+		3.81494e+06)
+	~	Kilo Litre/Year
+	~		|
+
+Increasing Domestic Biodiesel Production=
+	(Domestic Biodiesel Production Average Rate+The Influence of The Use of The Latest Technology Average Rate\
+		)*Domestic Biodiesel Production
+	~	Kilo Litre/Year
+	~		|
+
+Industrial Demand Average Rate=
+	Affordable Industrial Price Average Rate+Industrial Product Quality Average Rate
+	~	Dmnl
+	~		|
+
+Industrial Product Quality Average Rate=
+	0.15
+	~	Dmnl
+	~		|
+
+Lack of Supporting Infrastructure Average Rate=
+	0
+	~	Dmnl
+	~		|
+
+Declining Domestic Demand=
+	(Economic Downturns Average Rate+Engine Performance and Compatibility Issues Average Rate\
+		+Fluctuating Crude Oil Prices Average Rate+Growth of Electric Vehicles Average Rate\
+		+Inconsistent Government Policies Average Rate+Lack of Supporting Infrastructure Average Rate\
+		+Lower Energy Efficiency Average Rate)*Domestic Biodiesel Demand
+	~	Kilo Litre/Year
+	~		|
+
+Lower Energy Efficiency Average Rate=
+	0
+	~	Dmnl
+	~		|
+
+Domestic Biodiesel Production= INTEG (
+	Increasing Domestic Biodiesel Production-Declining Domestic Biodiesel Production,
+		1.76056e+07)
+	~	Kilo Litre/Year
+	~		|
+
+Domestic Biodiesel Production Average Rate=
+	0.2438
+	~	Dmnl
+	~		|
+
+Economic Crises Average Rate=
+	0
+	~	Kilo Litre/Year
+	~		|
+
+Economic Downturns Average Rate=
+	0
+	~	Dmnl
+	~		|
+
+Engine Performance and Compatibility Issues Average Rate=
+	0
+	~	Dmnl
+	~		|
+
+Fluctuating Crude Oil Prices Average Rate=
+	0
+	~	Dmnl
+	~		|
+
+Growth of Electric Vehicles Average Rate=
+	0
+	~	Dmnl
+	~		|
+
+Inconsistent Government Policies Average Rate=
+	0
+	~	Dmnl
+	~		|
+
+Retail Product Quality Average Rate=
+	0.05
+	~	Dmnl
+	~		|
+
+The Influence of The Use of The Latest Technology Average Rate=
+	0.13125
+	~	Dmnl
+	~		|
+
+Unattainable Prices for Customers Average Rate=
+	0
+	~	Kilo Litre/Year
+	~		|
+
+Low Resource Availability Average Rate=
+	0
+	~	Kilo Litre/Year
+	~		|
+
+Infrastructure Development Average Rate=
+	0.3
+	~	Dmnl
+	~		|
+
+Retail Demand Average Rate=
+	Affordable Retail Price Average Rate+Retail Product Quality Average Rate
+	~	Dmnl
+	~		|
+
+Low Product Quality Average Rate=
+	0
+	~	Kilo Litre/Year
+	~		|
+
+Declining Domestic Biodiesel Production=
+	(Caused by Error Average Rate+Caused by Force Majors Average Rate)*Domestic Biodiesel Production
+	~	Kilo Litre/Year
+	~		|
+
+Domestic Biodiesel Demand= INTEG (
+	Increasing Domestic Demand-Declining Domestic Demand,
+		1.41033e+07)
+	~	Kilo Litre/Year
+	~		|
+
+By Human Error Average Rate=
+	0
+	~	Dmnl
+	~		|
+
+By System Error Average Rate=
+	0
+	~	Dmnl
+	~		|
+
+Caused by Error Average Rate=
+	By Human Error Average Rate+By System Error Average Rate
+	~	Dmnl
+	~		|
+
+Caused by Force Majors Average Rate=
+	0
+	~	Dmnl
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 2035
+	~	Year
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 2023
+	~	Year
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Year [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Year [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,27,0
+10,1,Domestic Biodiesel Production,2270,1622,87,42,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,2,48,2630,1623,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,1,100,0,0,22,0,192,0,-1--1--1,,1|(2429,1623)|
+1,4,5,2,4,0,0,22,0,192,0,-1--1--1,,1|(2567,1623)|
+11,5,0,2508,1623,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,Declining Domestic Biodiesel Production,2508,1673,123,42,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,7,Domestic Biodiesel Demand,2347,746,97,27,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,8,48,2764,750,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,9,11,7,100,0,0,22,0,192,0,-1--1--1,,1|(2513,750)|
+1,10,11,8,4,0,0,22,0,192,0,-1--1--1,,1|(2674,750)|
+11,11,0,2589,750,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,12,Declining Domestic Demand,2589,798,76,40,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,13,48,1911,747,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,14,16,13,100,0,0,22,0,192,0,-1--1--1,,1|(1989,747)|
+1,15,16,7,4,0,0,22,0,192,0,-1--1--1,,1|(2160,747)|
+11,16,0,2064,747,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,17,Increasing Domestic Demand,2064,797,85,42,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,18,Caused by Force Majors Average Rate,2395,1480,85,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,19,18,6,1,0,0,0,0,192,0,-1--1--1,,1|(2503,1562)|
+10,20,Caused by Error Average Rate,2650,1779,74,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,21,20,6,1,0,0,0,0,192,0,-1--1--1,,1|(2619,1669)|
+10,22,By System Error Average Rate,2607,1886,69,12,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,23,By Human Error Average Rate,2865,1764,74,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,24,22,20,1,0,0,0,0,192,0,-1--1--1,,1|(2596,1863)|
+1,25,23,20,1,0,0,0,0,192,0,-1--1--1,,1|(2742,1812)|
+1,26,1,6,1,0,0,0,0,192,0,-1--1--1,,1|(2492,1685)|
+12,27,48,1808,1622,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,28,30,27,100,0,0,22,0,192,0,-1--1--1,,1|(1906,1622)|
+1,29,30,1,4,0,0,22,0,192,0,-1--1--1,,1|(2094,1622)|
+11,30,0,2000,1622,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,31,Increasing Domestic Biodiesel Production,2000,1672,94,42,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,32,1,31,1,0,0,0,0,192,0,-1--1--1,,1|(2147,1750)|
+10,33,Stock Distribution Availability,3515,1169,104,42,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,34,48,3012,1180,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,35,37,34,100,0,0,22,0,192,0,-1--1--1,,1|(3117,1180)|
+1,36,37,33,4,0,0,22,0,192,0,-1--1--1,,1|(3318,1180)|
+11,37,0,3219,1180,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,38,Biodiesel Distribution to Stock,3219,1230,91,42,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,39,Biodiesel Export to Global,3627,1452,98,31,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,40,48,3621,1835,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,41,43,40,100,0,0,22,0,192,0,-1--1--1,,1|(3621,1744)|
+1,42,43,39,4,0,0,22,0,192,0,-1--1--1,,1|(3621,1566)|
+11,43,0,3621,1655,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,44,Biodiesel Export to Global Average Rate,3731,1655,102,45,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,45,48,4007,1177,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,46,48,33,100,0,0,22,0,192,0,-1--1--1,,1|(3712,1177)|
+1,47,48,45,4,0,0,22,0,192,0,-1--1--1,,1|(3907,1177)|
+11,48,0,3811,1177,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,49,Biodiesel Distribution to Customers,3811,1227,86,42,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,50,7,12,1,0,0,0,0,192,0,-1--1--1,,1|(2500,845)|
+1,51,7,17,1,0,0,0,0,192,0,-1--1--1,,1|(2248,859)|
+10,52,Lower Energy Efficiency Average Rate,2546,657,82,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,53,Engine Performance and Compatibility Issues Average Rate,2753,598,93,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,54,Economic Downturns Average Rate,2886,688,75,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,55,Fluctuating Crude Oil Prices Average Rate,2367,994,82,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,56,Inconsistent Government Policies Average Rate,2689,1088,94,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,57,Lack of Supporting Infrastructure Average Rate,2881,868,87,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,58,Growth of Electric Vehicles Average Rate,2829,993,85,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,59,52,12,1,0,0,0,0,192,0,-1--1--1,,1|(2492,726)|
+1,60,53,12,1,0,0,0,0,192,0,-1--1--1,,1|(2637,689)|
+1,61,54,12,1,0,0,0,0,192,0,-1--1--1,,1|(2705,703)|
+1,62,58,12,1,0,0,0,0,192,0,-1--1--1,,1|(2670,917)|
+1,63,55,12,1,0,0,0,0,192,0,-1--1--1,,1|(2504,924)|
+1,64,56,12,1,0,0,0,0,192,0,-1--1--1,,1|(2591,945)|
+1,65,57,12,1,0,0,0,0,192,0,-1--1--1,,1|(2715,860)|
+10,66,Economic Crises Average Rate,4130,1218,74,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,67,Low Product Quality Average Rate,4004,1039,73,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,68,Low Resource Availability Average Rate,3749,1348,73,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,69,Unattainable Prices for Customers Average Rate,4014,1419,73,42,8,3,0,0,-1,1,0,0,0,0,0,0,0,0
+10,70,Infrastructure Development Average Rate,3075,1025,85,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,71,66,49,1,0,0,0,0,192,0,-1--1--1,,1|(3934,1299)|
+1,72,67,49,1,0,0,0,0,192,0,-1--1--1,,1|(3883,1109)|
+1,73,69,49,1,0,0,0,0,192,0,-1--1--1,,1|(3939,1398)|
+1,74,68,49,1,0,0,0,0,192,0,-1--1--1,,1|(3750,1261)|
+10,75,The Influence of The Use of The Latest Technology Average Rate,1850,1499,123,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,76,75,31,1,0,0,0,0,192,0,-1--1--1,,1|(1949,1517)|
+10,77,Affordable Industrial Price Average Rate,2123,608,69,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,78,Industrial Demand Average Rate,1900,649,86,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,79,Retail Demand Average Rate,1904,910,69,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,80,Affordable Retail Price Average Rate,2063,983,85,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,81,77,78,1,0,0,0,0,192,0,-1--1--1,,1|(2001,528)|
+1,82,80,79,1,0,0,0,0,192,0,-1--1--1,,1|(2034,908)|
+10,83,Domestic Biodiesel Production Average Rate,1793,1777,87,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,84,Availability of Facilities Average Rate,2793,1381,85,29,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,85,83,31,1,0,0,0,0,192,0,-1--1--1,,1|(1930,1769)|
+10,86,Industrial Product Quality Average Rate,1734,536,82,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,87,Retail Product Quality Average Rate,1801,1010,73,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,88,86,78,1,0,0,0,0,192,0,-1--1--1,,1|(1778,654)|
+1,89,87,79,1,0,0,0,0,192,0,-1--1--1,,1|(1755,894)|
+12,90,0,2899,279,1120,132,8,7,0,58,-1,1,0,0,-1--1--1,-1--1--1,Arial|60|B|0-0-0,0,0,0,0,0,0
+OPTIMIZING AND FORECASTING THE AMOUNT OF BIODIESEL STOCK DISTRIBUTION AVAILABILITY IN INDONESIA (FOR PERIOD 2023-2035): A DYNAMIC SYSTEMS APPROACH
+1,91,78,17,1,0,0,0,0,192,0,-1--1--1,,1|(2022,674)|
+1,92,79,17,1,0,0,0,0,192,0,-1--1--1,,1|(1915,827)|
+1,93,70,38,1,0,0,0,0,192,0,-1--1--1,,1|(3174,1062)|
+1,94,84,38,1,0,0,0,0,192,0,-1--1--1,,1|(3047,1401)|
+10,95,Domestic Biodiesel Production to Stock Average Rate,3056,1670,87,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,96,Domestic Biodiesel Demand for Customers Average Rate,3588,793,107,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,97,33,38,1,0,0,0,0,192,0,-1--1--1,,1|(3364,1291)|
+1,98,33,49,1,0,0,0,0,192,0,-1--1--1,,1|(3655,1074)|
+1,99,1,101,1,0,0,0,0,192,0,-1--1--1,,1|(2769,1994)|
+1,100,95,101,1,0,0,0,0,192,0,-1--1--1,,1|(3087,1550)|
+10,101,Domestic Biodiesel Production to Stock,3310,1541,87,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,102,39,33,1,0,0,0,0,192,0,-1--1--1,,1|(3637,1299)|
+1,103,101,33,1,0,0,0,0,192,0,-1--1--1,,1|(3474,1403)|
+10,104,Domestic Biodiesel Demand for Customers,3386,954,87,42,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,105,7,104,1,0,0,0,0,192,0,-1--1--1,,1|(2791,511)|
+1,106,96,104,1,0,0,0,0,192,0,-1--1--1,,1|(3556,920)|
+1,107,104,33,1,0,0,0,0,192,0,-1--1--1,,1|(3359,1084)|
+12,108,0,5002,629,300,200,0,15,0,0,2,0,0,0,0,0,0,0,0,0
+Domestic Biodiesel Demand,Graph
+12,109,0,5712,629,300,200,0,15,0,0,2,0,0,0,0,0,0,0,0,0
+Domestic Biodiesel Production,Graph
+12,110,0,6427,627,300,200,0,15,0,0,2,0,0,0,0,0,0,0,0,0
+Biodiesel Export to Global,Graph
+12,111,0,6078,1435,658,490,8,15,0,0,2,0,0,0,0,0,0,0,0,0
+Stock Distribution Availability,Graph
+12,112,0,4814,1019,80,65,0,79,0,0,0,0,0,0,0,0,0,0,0,0
+Affordable Industrial Price Average Rate,0,1,0.01
+12,113,0,5162,1022,80,65,0,79,0,0,0,0,0,0,0,0,0,0,0,0
+Affordable Retail Price Average Rate,0,1,0.01
+12,114,0,4807,1184,80,65,0,79,0,0,0,0,0,0,0,0,0,0,0,0
+Industrial Product Quality Average Rate,0,1,0.01
+12,115,0,5156,1181,80,65,0,79,0,0,0,0,0,0,0,0,0,0,0,0
+Retail Product Quality Average Rate,0,1,0.01
+12,116,0,4810,1364,128,80,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+The Influence of The Use of The Latest Technology Average Rate,0,1,0.01
+12,117,0,5167,1364,101,72,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+Domestic Biodiesel Production Average Rate,0,1,0.01
+12,118,0,4810,1532,80,65,0,79,0,0,0,0,0,0,0,0,0,0,0,0
+Infrastructure Development Average Rate,0,1,0.01
+12,119,0,5167,1534,80,65,0,79,0,0,0,0,0,0,0,0,0,0,0,0
+Availability of Facilities Average Rate,0,1,0.01
+12,120,0,4821,1711,112,54,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+Domestic Biodiesel Production to Stock Average Rate,0,1,0.01
+12,121,0,5163,1709,110,56,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+Domestic Biodiesel Demand for Customers Average Rate,0,1,0.01
+12,122,0,4992,1856,80,65,0,79,0,0,0,0,0,0,0,0,0,0,0,0
+Biodiesel Export to Global Average Rate,0,1,0.01
+12,123,0,983,373,486,206,3,7,0,59,-1,10,0,0,0-0-0,0-0-0,Arial|28|B|0-0-0,0,0,0,0,0,0
+Presented by: Syndicate 2 of Blemba69 Weekend Class|<<NnN>>||<<NnN>>|Ami (Aje) (29123061)|<<NnN>>|Andrie (29123265)|<<NnN>>|Dian Permata Budi (29123189)|<<NnN>>|Dwidya Sitta Anugari (29123188)|<<NnN>>|Hearly Susanto (29123169)|<<NnN>>|Muhammad Faris A (29123208)|<<NnN>>|Priyanto Purwo Adinugroho (29123200)
+///---\\\
+:L<%^E!@
+1:current.vdfx
+4:Time
+5:Stock Distribution Availability
+9:current
+19:27,0
+24:2023
+25:2035
+26:2035
+23:0
+15:0,0,0,0,0,0
+27:0,
+34:0,
+42:0
+72:0
+73:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Vensim Sans|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1
