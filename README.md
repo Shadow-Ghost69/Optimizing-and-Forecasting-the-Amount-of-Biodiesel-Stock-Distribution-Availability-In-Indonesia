@@ -15,4 +15,4 @@ Purpose of The Model:
 5. To analyse the availability of facilities, and infrastructure development average rate as an important variable in increasing biodiesel distribution to stock in Indonesia.
 
 
-Note: Geser pointer ke kanan untuk melihat 
+Note: Move the pointer to the right to see the view to control the bar in Vensim after running the model.
