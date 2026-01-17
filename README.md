@@ -13,4 +13,5 @@ Purpose of The Model:
 3. To analyse the product quality, and affordable price average rate for both industrial and retail as an important variable in increasing increasing domestic demand in Indonesia.
 4. To analyse the influence of the use of the latest technology average rate as an important variable in increasing domestic biodiesel production in Indonesia.
 5. To analyse the availability of facilities, and infrastructure development average rate as an important variable in increasing biodiesel distribution to stock in Indonesia.
+
 So, addressing these issues requires collaboration between government, industry, and other stakeholders to ensure a sustainable supply of biodiesel amidst rising demand.
